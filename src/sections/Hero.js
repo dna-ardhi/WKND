@@ -18,6 +18,7 @@ const BoxWrapper = styled('div')({
   backgroundRepeat: 'no-repeat',
   backgroundColor: '#EEBECE',
   backgroundPositionX: 'center',
+  paddingTop: '3rem',
   paddingBottom: '5rem',
 });
 
