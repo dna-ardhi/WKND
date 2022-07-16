@@ -37,16 +37,29 @@ HideOnScroll.propTypes = {
 };
 
 const TopBar = ({ ...props }) => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
   return (
     <HideOnScroll {...props}>
       <AppBar sx={{ bgcolor: 'white', color: 'black' }}>
         <Container>
           <Toolbar>
             <Box sx={{ display: 'flex', alignItems: 'center', my: 2 }}>
-              <Box sx={{ mr: 2, display: 'flex', alignItems: 'center' }}>
+              <Box
+                sx={{
+                  mr: 2,
+                  display: 'flex',
+                  alignItems: 'center',
+                  cursor: 'pointer',
+                }}
+                onClick={scrollToTop}>
                 <Image src='/assets/logo.png' width={32} height={32} />
               </Box>
-              <Box>
+              <Box sx={{ cursor: 'pointer' }} onClick={scrollToTop}>
                 <Typography variant='body3' component='div'>
                   Good Morning
                 </Typography>

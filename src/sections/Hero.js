@@ -1,7 +1,8 @@
 import { Box, Fab, Typography } from '@mui/material';
 import { styled } from '@mui/system';
 import Image from 'next/future/image';
-import React from 'react';
+import React, { useContext } from 'react';
+import WeekendContext from '../context';
 
 const BoxWrapper = styled('div')({
   width: '100%',
@@ -21,6 +22,11 @@ const BoxWrapper = styled('div')({
 });
 
 const Hero = () => {
+  const handleGo = () => {
+    document
+      .getElementById('description')
+      .scrollIntoView({ behavior: 'smooth' });
+  };
   return (
     <BoxWrapper>
       <Typography variant='h1' components='h1' color='white' textAlign='center'>
@@ -56,7 +62,8 @@ const Hero = () => {
             width: 232,
             position: 'absolute',
             bottom: '22%',
-          }}>
+          }}
+          onClick={handleGo}>
           Let's Go!
         </Fab>
       </Box>
