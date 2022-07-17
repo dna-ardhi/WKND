@@ -1,46 +1,68 @@
-# Next.js example
+<h1 align="center">
+  <br>
+  <img src="./public/assets/mascot.png" alt="Weekend Astronout" width="200">
+  <br>
+  Weekend From Home
+  <br>
+</h1>
 
-## How to use
+<h4 align="center">Stay active with a little workout</h4>
 
-Download the example [or clone the repo](https://github.com/mui/material-ui):
+<p align="center">
+  <a href="#desktop-view">Desktop View</a> •
+  <a href="#mobile-view">Mobile View</a> •
+  <a href="#how-to-use">How To Use</a> •
+  <a href="#credits">Credits</a>
+</p>
 
-<!-- #default-branch-switch -->
+## Desktop View
+
+<div align='center'>
+
+![Desktop](./public/assets/Desktop.png)
+
+</div>
+
+## Mobile View
+
+<div align='center'>
+
+![Mobile](./public/assets/Mobile.jpg)
+
+</div>
+
+## How To Use
+
+To clone and run this application, you'll need [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com) or [yarn](https://yarnpkg.com)) installed on your computer. From your command line:
 
 ```sh
-curl https://codeload.github.com/mui/material-ui/tar.gz/master | tar -xz --strip=2  material-ui-master/examples/nextjs
-cd nextjs
+
+# Install dependencies
+$ yarn install
+
+# Run development mode
+$ yarn dev
+
+# Build the app
+$ yarn build
+
+# Run production server
+$ yarn start
+
+#  set up Next.js' built-in ESLint configuration
+$ yarn lint
+
 ```
 
-Install it and run:
+## Credits
 
-```sh
-npm install
-npm run dev
-```
+This website uses the following open source packages:
 
-or:
-
-<!-- #default-branch-switch -->
-
-[![Edit on StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/mui/material-ui/tree/master/examples/nextjs)
-
-[![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/mui/material-ui/tree/master/examples/nextjs)
-
-## The idea behind the example
-
-The project uses [Next.js](https://github.com/vercel/next.js), which is a framework for server-rendered React apps.
-It includes `@mui/material` and its peer dependencies, including `emotion`, the default style engine in MUI v5.
-If you prefer, you can [use styled-components instead](https://mui.com/material-ui/guides/interoperability/#styled-components).
-
-## The link component
-
-Next.js has [a custom Link component](https://nextjs.org/docs/api-reference/next/link).
-The example folder provides adapters for usage with MUI.
-More information [in the documentation](https://mui.com/material-ui/guides/routing/#next-js).
-
-## What's next?
-
-<!-- #default-branch-switch -->
-
-You now have a working example project.
-You can head back to the documentation, continuing browsing it from the [templates](https://mui.com/material-ui/getting-started/templates/) section.
+- [Axios](https://axios-http.com/)
+- [Eslint](https://eslint.org/)
+- [Material UI](https://mui.com/)
+- [Node.js](https://nodejs.org/)
+- [NextJs](https://nextjs.org/)
+- [ReactJs](https://reactjs.org/)
+- [Sass](https://sass-lang.com/)
+- [SwiperJs](https://swiperjs.com/)
