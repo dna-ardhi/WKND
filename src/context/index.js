@@ -1,4 +1,5 @@
 import axios from 'axios';
+import moment from 'moment';
 import React, { createContext, useEffect, useState } from 'react';
 
 const WeekendContext = createContext();
@@ -10,6 +11,7 @@ export const WeekendProvider = ({ children }) => {
     helpAndTips: false,
   });
   const [error, setError] = useState({ status: false, message: null });
+  const [greeting, setGreeting] = useState('Hello');
 
   const weekend = axios.create({
     baseURL: 'https://wknd-take-home-challenge-api.herokuapp.com',
@@ -101,14 +103,34 @@ export const WeekendProvider = ({ children }) => {
     }
   };
 
+  const getTime = () => {
+    setInterval(() => {
+      const hours = moment().hours();
+
+      if (hours >= 5 && hours <= 11) {
+        setGreeting('Good Morning');
+      } else if (hours >= 12 && hours <= 17) {
+        setGreeting('Good Afternoon');
+      } else if (hours >= 18 && hours <= 21) {
+        setGreeting('Good Evening');
+      } else if ((hours >= 22 && hours <= 23) || (hours >= 0 && hours <= 4)) {
+        setGreeting('Good Night');
+      } else {
+        setGreeting('Hello');
+      }
+    }, 1000);
+  };
+
   useEffect(() => {
     getTestimony();
     getHelpAndTips();
+    getTime();
   }, []);
 
   useEffect(() => {});
   const contextValue = {
     closeNotify,
+    greeting,
     error,
     data,
     loading,

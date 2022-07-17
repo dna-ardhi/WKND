@@ -7,9 +7,10 @@ import {
   Typography,
   useScrollTrigger,
 } from '@mui/material';
-import React from 'react';
+import React, { useContext } from 'react';
 import Image from 'next/image';
 import PropTypes from 'prop-types';
+import WeekendContext from '../context';
 
 const HideOnScroll = (props) => {
   const { children, window } = props;
@@ -37,6 +38,8 @@ HideOnScroll.propTypes = {
 };
 
 const TopBar = ({ ...props }) => {
+  const { greeting } = useContext(WeekendContext);
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -61,7 +64,7 @@ const TopBar = ({ ...props }) => {
               </Box>
               <Box sx={{ cursor: 'pointer' }} onClick={scrollToTop}>
                 <Typography variant='body3' component='div'>
-                  Good Morning
+                  {greeting}
                 </Typography>
                 <Typography variant='subtitle3' component='div' lineHeight={1}>
                   Fellas
