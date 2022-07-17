@@ -1,25 +1,36 @@
 import { Box, Fab, Typography } from '@mui/material';
 import { styled } from '@mui/system';
 import Image from 'next/future/image';
-import React, { useContext } from 'react';
-import WeekendContext from '../context';
+import React from 'react';
 
 const BoxWrapper = styled('div')({
   width: '100%',
-  height: '100%',
-  aspectRatio: '16 / 9',
+  height: '100vh',
   maxHeight: '1000px',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
+  backgroundColor: '#EEBECE',
+  paddingBottom: '5rem',
+  position: 'relative',
+  overflowX: 'hidden',
+});
+
+const Background = styled('div')({
+  width: '100%',
+  height: '100%',
+  minWidth: '1500px',
   backgroundImage: 'url("/assets/BG_1.png")',
   backgroundSize: 'contain',
   backgroundRepeat: 'no-repeat',
   backgroundColor: '#EEBECE',
   backgroundPositionX: 'center',
-  paddingTop: '3rem',
-  paddingBottom: '5rem',
+  position: 'absolute',
+});
+
+const TextWrapper = styled(Box)({
+  zIndex: 3,
 });
 
 const Hero = () => {
@@ -30,16 +41,23 @@ const Hero = () => {
   };
   return (
     <BoxWrapper>
-      <Typography variant='h1' components='h1' color='white' textAlign='center'>
-        WEEKEND FROM HOME
-      </Typography>
-      <Typography
-        variant='subtitle1'
-        components='p'
-        color='white'
-        textAlign='center'>
-        Stay active with a little workout
-      </Typography>
+      <Background />
+      <TextWrapper mb={7}>
+        <Typography
+          variant='h1'
+          components='h1'
+          color='white'
+          textAlign='center'>
+          WEEKEND FROM HOME
+        </Typography>
+        <Typography
+          variant='subtitle1'
+          components='p'
+          color='white'
+          textAlign='center'>
+          Stay active with a little workout
+        </Typography>
+      </TextWrapper>
 
       <Box
         sx={{
