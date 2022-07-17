@@ -8,12 +8,21 @@
 
 <h4 align="center">Stay active with a little workout</h4>
 
+<br>
+
 <p align="center">
+  <a href="#demo">Demo</a> •
   <a href="#desktop-view">Desktop View</a> •
   <a href="#mobile-view">Mobile View</a> •
   <a href="#how-to-use">How To Use</a> •
   <a href="#credits">Credits</a>
 </p>
+
+<br>
+
+## Demo
+
+Here is a working live demo : [https://wknd-by-ardhi.vercel.app/](https://wknd-by-ardhi.vercel.app/)
 
 ## Desktop View
 
