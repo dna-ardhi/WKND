@@ -25,7 +25,9 @@ const theme = createTheme({
       fontSize: '3.5rem',
       fontWeight: 900,
     },
-
+    h6: {
+      fontSize: '0.8rem',
+    },
     subtitle1: {
       fontStyle: 'italic',
       fontSize: '1.25rem',

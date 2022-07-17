@@ -32,12 +32,12 @@ const Footer = () => {
             sx={{ color: 'white', fontWeight: 700 }}>
             wknd@<TextLight>2020</TextLight>
           </Typography>
-          <RoundedWrapper sx={{ px: 3 }}>
+          <RoundedWrapper sx={{ px: 2 }}>
             <Typography
               variant='body2'
               component='h5'
               color='white'
-              sx={{ fontWeight: 500 }}>
+              sx={{ fontWeight: 400 }}>
               alpha version 0.1
             </Typography>
           </RoundedWrapper>
