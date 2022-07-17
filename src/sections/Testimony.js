@@ -7,7 +7,7 @@ import WeekendContext from '../context';
 
 const BoxWrapper = styled('div')({
   width: '100%',
-  height: '500px',
+  height: '460px',
   position: 'relative',
   display: 'flex',
   flexDirection: 'column',
@@ -38,12 +38,12 @@ const Testimony = () => {
             variant='h2'
             component='h2'
             color='white'
-            sx={{ position: 'relative', pt: 5 }}>
+            sx={{ position: 'relative', pt: 7 }}>
             Testimonial
           </Typography>
         </Container>
       </BoxPink>
-      <Container sx={{ position: 'absolute', bottom: 120 }}>
+      <Container sx={{ position: 'absolute', bottom: 100 }}>
         <CardSwiper data={data.testimony} />
       </Container>
       <BoxBlack></BoxBlack>
