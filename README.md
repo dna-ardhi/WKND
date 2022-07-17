@@ -42,7 +42,7 @@ Here is a working live demo : [https://wknd-by-ardhi.vercel.app/](https://wknd-b
 
 ## How To Use
 
-To clone and run this application, you'll need [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com) or [yarn](https://yarnpkg.com)) installed on your computer. From your command line:
+To run this application, you'll need [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com) or [yarn](https://yarnpkg.com)) installed on your computer. From your command line:
 
 ```sh
 
