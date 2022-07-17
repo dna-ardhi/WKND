@@ -70,6 +70,7 @@ This website uses the following open source packages:
 - [Axios](https://axios-http.com/)
 - [Eslint](https://eslint.org/)
 - [Material UI](https://mui.com/)
+- [MomentJS](https://momentjs.com/)
 - [Node.js](https://nodejs.org/)
 - [NextJs](https://nextjs.org/)
 - [ReactJs](https://reactjs.org/)
