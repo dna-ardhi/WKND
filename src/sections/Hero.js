@@ -21,11 +21,11 @@ const Background = styled('div')({
   width: '100%',
   height: '100%',
   minWidth: '1500px',
+  maxWidth: '2500px',
   backgroundImage: 'url("/assets/BG_1.png")',
-  backgroundSize: 'contain',
-  backgroundRepeat: 'no-repeat',
-  backgroundColor: '#EEBECE',
+  backgroundSize: 'cover',
   backgroundPositionX: 'center',
+  backgroundPositionY: 'bottom',
   position: 'absolute',
 });
 
