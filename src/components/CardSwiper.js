@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Navigation } from 'swiper';
+import { array, arrayOf, object } from 'prop-types';
 
 const CardSwiperWrapper = styled('div')({
   display: 'flex',
@@ -79,6 +80,10 @@ const CardSwiper = ({ data }) => {
       </NavButton>
     </CardSwiperWrapper>
   );
+};
+
+CardSwiper.prototype = {
+  data: arrayOf(object).isRequired,
 };
 
 export default CardSwiper;
