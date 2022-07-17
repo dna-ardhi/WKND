@@ -25,6 +25,9 @@ const theme = createTheme({
       fontSize: '3.5rem',
       fontWeight: 900,
     },
+    h3: {
+      fontWeight: 800,
+    },
     h6: {
       fontSize: '0.8rem',
     },
