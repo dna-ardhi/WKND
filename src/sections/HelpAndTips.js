@@ -1,9 +1,12 @@
 import {
+  Box,
   Container,
+  Grid,
   IconButton,
   ImageList,
   ImageListItem,
   ImageListItemBar,
+  Skeleton,
   Typography,
   useMediaQuery,
 } from '@mui/material';
@@ -25,7 +28,7 @@ const BoxWrapper = styled('div')({
 });
 
 const HelpAndTips = () => {
-  const { data } = useContext(WeekendContext);
+  const { data, loading } = useContext(WeekendContext);
   const theme = useTheme();
   const sm = useMediaQuery(theme.breakpoints.down('sm'));
   const md = useMediaQuery(theme.breakpoints.down('md'));
@@ -37,30 +40,50 @@ const HelpAndTips = () => {
         <Typography variant='h2' component='h2' color='white' sx={{ mb: 4 }}>
           Help & Tips
         </Typography>
-        {data.helpAndTips && (
-          <ImageList cols={sm ? 1 : md ? 2 : 3} sx={{ mx: { sm: 0, md: 8 } }}>
-            {data.helpAndTips.map((item) => (
-              <ImageListItem key={item.image}>
-                <img
-                  src={`${item.image}?w=248&fit=crop&auto=format`}
-                  srcSet={`${item.image}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                  alt={item.slug}
-                  loading='lazy'
-                />
-                <ImageListItemBar
-                  title={item.title}
-                  actionIcon={
-                    <IconButton
-                      sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
-                      aria-label={`info about ${item.title}`}>
-                      <ArrowForwardIcon />
-                    </IconButton>
-                  }
-                />
-              </ImageListItem>
-            ))}
-          </ImageList>
-        )}
+        <Box sx={{ mx: { sm: 0, md: 8 } }}>
+          <Grid container spacing={0.5}>
+            {loading.helpAndTips
+              ? Array.from(new Array(3)).map(() => (
+                  <Grid item xs={12} sm={6} md={4}>
+                    <Skeleton
+                      variant='rectangular'
+                      sx={{
+                        width: '100%',
+                        height: '10rem',
+                        maxHeight: '180px',
+                        bgcolor: 'GrayText',
+                      }}
+                    />
+                  </Grid>
+                ))
+              : data.helpAndTips && (
+                  <ImageList
+                    cols={sm ? 1 : md ? 2 : 3}
+                    sx={{ mx: { sm: 0, md: 8 } }}>
+                    {data.helpAndTips.map((item) => (
+                      <ImageListItem key={item.image}>
+                        <img
+                          src={item.image}
+                          srcSet={item.image}
+                          alt={item.slug}
+                          loading='lazy'
+                        />
+                        <ImageListItemBar
+                          title={item.title}
+                          actionIcon={
+                            <IconButton
+                              sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
+                              aria-label={`info about ${item.title}`}>
+                              <ArrowForwardIcon />
+                            </IconButton>
+                          }
+                        />
+                      </ImageListItem>
+                    ))}
+                  </ImageList>
+                )}
+          </Grid>
+        </Box>
       </Container>
     </BoxWrapper>
   );

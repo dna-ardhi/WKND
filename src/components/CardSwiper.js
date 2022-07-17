@@ -1,4 +1,4 @@
-import { Card, CardContent, Fab, Typography } from '@mui/material';
+import { Card, CardContent, Fab, Skeleton, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -44,21 +44,32 @@ const CardSwiper = ({ data }) => {
         }
         onReachBeginning={() => setDisableBtn('prev')}
         onReachEnd={() => setDisableBtn('next')}>
-        {data &&
-          data.map((item) => (
-            <SwiperSlide key={item.id} style={{ width: 'fit-content' }}>
-              <Card sx={{ height: '220px', width: '300px' }}>
-                <CardContent>
+        {(data ? data : Array.from(new Array(3))).map((item, idx) => (
+          <SwiperSlide key={item?.id || idx} style={{ width: 'fit-content' }}>
+            <Card sx={{ height: '220px', width: '300px' }}>
+              <CardContent>
+                {data ? (
                   <Typography color='black' variant='h3' mb={3}>
                     {item.by}
                   </Typography>
+                ) : (
+                  <Skeleton variant='text' height={70} />
+                )}
+                {data ? (
                   <Typography variant='subtitle4' component='p'>
                     {item.testimony}
                   </Typography>
-                </CardContent>
-              </Card>
-            </SwiperSlide>
-          ))}
+                ) : (
+                  <>
+                    <Skeleton variant='text' />
+                    <Skeleton variant='text' />
+                    <Skeleton variant='text' />
+                  </>
+                )}
+              </CardContent>
+            </Card>
+          </SwiperSlide>
+        ))}
       </Swiper>
       <NavButton
         aria-label='next'
